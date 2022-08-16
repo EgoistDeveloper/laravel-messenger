@@ -18,8 +18,7 @@ class CreateThreadsTable extends Migration
             $table->increments('id');
 
             $table->string('subject', 50)->nullable();
-
-            $table->morphs('subjectable');
+            $table->enum('status', ['open', 'closed'])->default('open');
 
             $table->timestamps();
         });
